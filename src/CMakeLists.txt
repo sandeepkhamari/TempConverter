@@ -16,7 +16,8 @@ message(STATUS "CMAKE_INSTALL_LIBDIR: ${CMAKE_INSTALL_LIBDIR}")
 message(STATUS "CMAKE_INSTALL_INCLUDEDIR: ${CMAKE_INSTALL_INCLUDEDIR}")
 message(STATUS "CMAKE_INSTALL_BINDIR: ${CMAKE_INSTALL_BINDIR}")
 
-# install the library.
+# May not need to install the lib, as we are using it in the same build tree.
+# If it was getting used somewhere else, then we need to install it.
 install(TARGETS temp_converter EXPORT  temp_converterTarget
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
